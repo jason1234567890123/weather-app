@@ -1,0 +1,151 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right top, #74ebd5, #acb6e5);
+  color: #fff;
+  height: 100dvh;
+  width: 100dvw;
+  overflow: hidden;
+}
+
+.weather-app {
+  padding: 20px;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading,
+.error-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.error-message {
+  color: #ff4d4d;
+}
+
+.weather-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-areas:
+    "location location weather"
+    "temperature humidity wind"
+    "pressure uv uv";
+  gap: 20px;
+  width: 100%;
+  max-width: 1600px;
+}
+
+.bento-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.bento-card:hover {
+  transform: translateY(-5px);
+}
+
+.bento-header {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.bento-value {
+  font-size: 2rem;
+}
+
+.weather-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.location {
+  grid-area: location;
+}
+.weather {
+  grid-area: weather;
+}
+.temperature {
+  grid-area: temperature;
+}
+.humidity {
+  grid-area: humidity;
+}
+.wind {
+  grid-area: wind;
+}
+.pressure {
+  grid-area: pressure;
+}
+.uv {
+  grid-area: uv;
+}
+
+@media (max-width: 768px) {
+  .weather-info {
+    grid-template-areas:
+      "location"
+      "weather"
+      "temperature"
+      "humidity"
+      "wind"
+      "pressure"
+      "uv";
+  }
+}
+
+
+.leaflet-container {
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+  z-index: 0;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.tabs button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.tabs button.active {
+  background: rgba(255, 255, 255, 0.4);
+  font-weight: bold;
+}
+
+.tabs button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.weather-app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1600px;
+}
