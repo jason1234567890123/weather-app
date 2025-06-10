@@ -52,3 +52,14 @@ export default tseslint.config({
   },
 })
 ```
+## Installation
+
+To get this project running locally, run:
+
+ash
+npm install
+npm run dev
+
+
+This will install the dependencies and start the development server.
+
